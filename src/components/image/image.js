@@ -18,15 +18,16 @@ function Image() {
         var randPosYstring = randPosY.toString()
 
         // grab elm, concat position # with 'px', setting style
-        const leftPos = document.getElementById('rand_pos')
+        const leftPos = document.getElementById('img_pos')
         leftPos.style.left = randPosXstring + 'px';
-        const topPos = document.getElementById('rand_pos')
-        topPos.style.top = randPosYstring + 'px';      
 
+        const topPos = document.getElementById('img_pos')
+        topPos.style.top = randPosYstring + 'px';   
+   
     });
 
         return (
-            <div id="rand_pos">
+            <div id="img_pos">
             <img  src="https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/" alt="place holder"></img>
             </div>
         )
