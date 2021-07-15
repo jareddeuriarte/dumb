@@ -5,6 +5,7 @@ function Youtube() {
 
     //Hello, Peter. 
 
+    // RANDOMLY PLACE COMPONENT ON PAGE
     document.addEventListener("DOMContentLoaded", function(){
         
         // grab the width and height of the browser window
@@ -27,7 +28,7 @@ function Youtube() {
     });
 
     return (
-        <div id="youtube_pos">
+        <div className='content' id="youtube_pos">
             <iframe
                 width="853"
                 height="480"

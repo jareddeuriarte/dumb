@@ -1,13 +1,18 @@
 import React from 'react';
-import '../image/image.css'
+import '../article/article.css'
 
-function Image() {
+function Article() {
 
     //Hi, Peter. 
 
+   
+    
+
+
+    
     // RANDOMLY PLACE COMPONENT ON PAGE
     document.addEventListener("DOMContentLoaded", function(){
-        
+
         // grab the width and height of the browser window
         var bodyWidth = document.body.clientWidth
         var bodyHeight = document.body.clientHeight;
@@ -27,11 +32,16 @@ function Image() {
    
     });
 
+
+    
+
         return (
-            <div className='content' id="img_pos">
-            <img  src="https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/" alt="place holder"></img>
+            <div className='content' id="article_pos">
+
+            <a href="https://en.wikipedia.org/wiki/Ariana_Grande" target="_blank" rel="noreferrer">THIS IS A LINK</a>
+            
             </div>
         )
 }
 
-export default Image;
+export default Article;
