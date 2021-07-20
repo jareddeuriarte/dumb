@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Form/form.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
@@ -7,75 +8,88 @@ function Form() {
 
 
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
+    function rand() {
+        return Math.round(Math.random() * 20) - 10;
+    }
 
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+    function getModalStyle() {
+        const top = 50 + rand();
+        const left = 50 + rand();
 
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
+        return {
+            top: `${top}%`,
+            left: `${left}%`,
+            transform: `translate(-${top}%, -${left}%)`,
+        };
+    }
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
+    const useStyles = makeStyles((theme) => ({
+        paper: {
+            position: 'absolute',
+            width: 400,
+            // backgroundColor: theme.palette.background.paper,
+            // borderRadius: '10% 30% 50% 70%',
+            // border: '2px solid #000',
+            // boxShadow: theme.shadows[5],
+            padding: theme.spacing(2, 4, 3),
+        },
+    }));
 
-  const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
-  const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
+    const classes = useStyles();
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+    // getModalStyle is not a pure function, we roll the style only on the first render
+    const [modalStyle] = React.useState(getModalStyle);
+    const [open, setOpen] = React.useState(false);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+    const handleOpen = () => {
+        setOpen(true);
+    };
 
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-    </div>
-  );
+    const handleClose = () => {
+        setOpen(false);
+    };
 
-  return (
-    <div>
-      <button type="button" onClick={handleOpen}>
-        Add
-      </button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        {body}
-      </Modal>
-    </div>
-  );
+    const body = (
+        <div style={modalStyle} className={classes.paper}>
+
+            <h2 id="modal-title">add content</h2>
+
+            <form>
+                <input type="url" placeholder='url'></input>
+
+                <select name="content-type" id="content-type">
+                    <option value="">content type</option>
+                    <option value="dog">link</option>
+                    <option value="cat">youtube</option>
+                    <option value="hamster">image</option>
+                </select>
+                <input type="submit"></input>
+
+
+            </form>
+
+
+        </div>
+    );
+
+    return (
+        <div>
+            <button type="button" onClick={handleOpen}>
+                add
+            </button>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                {body}
+            </Modal>
+        </div>
+    );
 }
 
 export default Form;
 
 
- // <form>
- // <input type="url"></input>
-// <input type="submit"></input>
-// </form>
+
