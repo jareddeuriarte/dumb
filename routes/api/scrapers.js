@@ -1,8 +1,7 @@
 
 const puppeteer = require('puppeteer');
 
- // SCRAPING FOR OG META TAGS  (but right now just using dummy url and el)
- const scrapper = async function scrapeProduct(url){
+async function scrapeProduct(url){
     
     const browser = await puppeteer.launch();
     const page = await  browser.newPage();
@@ -14,13 +13,12 @@ const puppeteer = require('puppeteer');
     console.log({srcTxt})
 
     browser.close()
-
-    console.log('hello world')
-
-    // returns scrapper as a middleware function for express router
-    return scrapper('https://en.wikipedia.org/wiki/Ariana_Grande');
     
 };
 
+scrapeProduct('https://en.wikipedia.org/wiki/Ariana_Grande')
 
-module.exports = scrapper;
+
+
+
+// module.exports = scrapper;
