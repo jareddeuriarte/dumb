@@ -1,13 +1,8 @@
 import React from 'react';
+
 import '../article/article.css'
 
 function Article() {
-
-    //Hi, Peter. 
-
-   
-    
-
 
     
     // RANDOMLY PLACE COMPONENT ON PAGE
@@ -24,24 +19,26 @@ function Article() {
         var randPosYstring = randPosY.toString()
 
         // grab elm, concat position # with 'px', setting style
-        const leftPos = document.getElementById('img_pos')
+        const leftPos = document.getElementById('article-pos')
         leftPos.style.left = randPosXstring + 'px';
 
-        const topPos = document.getElementById('img_pos')
+        const topPos = document.getElementById('article-pos')
         topPos.style.top = randPosYstring + 'px';   
    
     });
 
-
-    
-
         return (
-            <div className='content' id="article_pos">
+            <div className='content' id="article-pos">
 
-            <a href="https://en.wikipedia.org/wiki/Ariana_Grande" target="_blank" rel="noreferrer">THIS IS A LINK</a>
+            <a href="https://en.wikipedia.org/wiki/Ariana_Grande" target="_blank" rel="noreferrer">
+
+            <img src="https://via.placeholder.com/100.png/09f/fff%20C/O%20https://placeholder.com/" alt="place holder"></img>
+
+            </a>
             
             </div>
         )
 }
 
 export default Article;
+
