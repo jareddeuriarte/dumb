@@ -29,7 +29,7 @@ function Image() {
 
         return (
             <div className='content' id="img_pos">
-            <img  src="https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/" alt="place holder"></img>
+            <img id='image'  src="https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/" alt="place holder"></img>
             </div>
         )
 }
